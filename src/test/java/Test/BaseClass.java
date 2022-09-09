@@ -19,24 +19,23 @@ public class BaseClass {
     @Parameters("browserName")
     @BeforeClass
     public void setup(String browserName) {
-        if(browserName.equalsIgnoreCase("chrome")) {
+        if (browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.navigate().to("https://admin-demo.nopcommerce.com");
-            pageFactory=new PageFactory(driver);
-        }
-        else if(browserName.equalsIgnoreCase("firefox")) {
+            pageFactory = new PageFactory(driver);
+        } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
             driver.navigate().to("https://admin-demo.nopcommerce.com");
-            pageFactory=new PageFactory(driver);
+            pageFactory = new PageFactory(driver);
         }
     }
 
     @AfterClass
-    public void close(){
+    public void close() {
         driver.findElement(logoutButton).click();
         driver.close();
     }
