@@ -8,4 +8,12 @@
             <class name="Test.LoginTest"/>
         </classes>
     </test>
+
+    <test name="Verify user is able to change order status">
+        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="testRunId2" value="TCTC-2"/>
+        <classes>
+            <class name="Test.ChangeOrderStatus"/>
+        </classes>
+    </test>
 </suite>
